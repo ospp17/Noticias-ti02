@@ -7,12 +7,12 @@
 }
 
 :root {
-    --almost-white:#FFFDFA;
-    --dark-blue:#00001A;
-    --gunetal:#5E607A;
-    --vernillion:#F15D51;
-    --yellow:#E9AA52;
-    --silver:#C5C6CE;
+    --almost-white: #FFFDFA;
+    --dark-blue: #00001A;
+    --gunetal: #5E607A;
+    --vernillion: #F15D51;
+    --yellow: #E9AA52;
+    --silver: #C5C6CE;
 }
 
 body {
@@ -20,31 +20,38 @@ body {
     background-color: var(--almost-white);
 }
 
-body.escurecer ::before{
+body.escurecer ::before {
     content: "";
     position: relative;
     height: 100vh;
-    width: 100
-    background-color: rgba(0, 0, 26, 0.5);
+    width: 100 background-color: rgba(0, 0, 26, 0.5);
     top: 0;
     left: 0;
     z-index: 1;
 }
 
-.header-mobile {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+
+    max-width: 1110px;
+    margin-inline: auto;
 }
 
-.header-mobile button {
+main {
+    max-width: 1110px;
+    margin-inline: auto;
+}
+
+header button {
     border: none;
     background: none;
     width: fit-content;
 }
 
-.header-mobile nav {
+header nav.mobile {
     position: fixed;
     background-color: var(--almost-white);
     right: 0;
@@ -61,16 +68,16 @@ body.escurecer ::before{
     transition: 0.7s;
 }
 
-.header-mobile nav.abrir{
+header nav.mobile.abrir {
     right: 0;
 }
 
-.header-mobile nav button{
+header nav button {
     align-self: flex-end;
     margin-bottom: 1.5rem;
 }
 
-.header-mobile nav a {
+header nav a {
     text-decoration: none;
     color: var(--dark-blue);
     font-size: 1.125rem;
@@ -144,7 +151,7 @@ body.escurecer ::before{
     line-height: 1.625rem;
 }
 
-.terceira-secao > div {
+.terceira-secao>div {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -158,7 +165,7 @@ body.escurecer ::before{
 .terceira-secao strong {
     color: var(--silver);
     font-size: 2rem;
-    line-height:100%;
+    line-height: 100%;
 }
 
 .terceira-secao h2 {
@@ -173,4 +180,32 @@ body.escurecer ::before{
     font-size: 0.9375rem;
     line-height: 1.625;
     color: var(--gunetal);
+}
+
+@media(min-width: 1100px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao {
+        grid-template-columns: 1/3;
+    }
+
+    header>button {
+        display: none;
+    }
+
+    header.desktop {
+        display: flex;
+        gap: 2.5rem;
+    }
+
+    header .desktop a {
+        font-size: 0.9375rem;
+        line-height: 1.625rem;
+        text-decoration: none;
+        color: var(--gunetal);
+    }
 }
