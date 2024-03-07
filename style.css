@@ -20,8 +20,8 @@ body {
     background-color: var(--almost-white);
 }
 
-body.menu-open::before{
-    content: **;
+body.escurecer ::before{
+    content: "";
     position: relative;
     height: 100vh;
     width: 100
@@ -41,6 +41,7 @@ body.menu-open::before{
 .header-mobile button {
     border: none;
     background: none;
+    width: fit-content;
 }
 
 .header-mobile nav {
@@ -49,7 +50,31 @@ body.menu-open::before{
     right: 0;
     top: 0;
     height: 100vh;
-    width: 16rem;
+    width: -16rem;
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1.5rem;
+
+    transition: 0.7s;
+}
+
+.header-mobile nav.abrir{
+    right: 0;
+}
+
+.header-mobile nav button{
+    align-self: flex-end;
+    margin-bottom: 1.5rem;
+}
+
+.header-mobile nav a {
+    text-decoration: none;
+    color: var(--dark-blue);
+    font-size: 1.125rem;
+    line-height: 1.5rem;
 }
 
 .primeira-secao {
